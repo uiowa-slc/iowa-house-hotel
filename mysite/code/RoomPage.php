@@ -8,22 +8,6 @@ class RoomPage extends Page {
 	'StudentRate' => 'Varchar',
 	'FacultyRate' => 'Varchar',
 	'GeneralRate' => 'Varchar',
-	// Capacities
-	'TablesAndChairsCapacity' => 'Varchar',
-	'RoundedTablesCapacity' => 'Varchar',
-	'TheaterCapacity' => 'Varchar',
-	'ClassroomCapacity' => 'Varchar',
-	'UshapeCapacity' => 'Varchar',
-	'BoardroomCapacity' => 'Varchar',
-	// Amenities
-	'HasComputer' => 'Boolean',
-	'HasEthernetConnection' => 'Boolean',
-	'HasProjectorScreen' => 'Boolean',
-	'HasDVD' => 'Boolean',
-	'HasSpeakers' => 'Boolean',
-	'HasMarkerboard'	 => 'Boolean',
-	'HasMicrophone'	 => 'Boolean',
-	'HasWifi'	 => 'Boolean'
 	);
 
 	static $has_one = array(
@@ -56,23 +40,7 @@ class RoomPage extends Page {
 		$fields->addFieldToTab('Root.Rates', new TextField('FacultyRate','Faculty Rate'));
 		$fields->addFieldToTab('Root.Rates', new TextField('GeneralRate','General Rate'));
 
-		// Capacities
-		$fields->addFieldToTab('Root.Capacities', new TextField('TablesAndChairsCapacity','Tables & Chairs Capacity.  Put * after a capacity value to indicate a room\'s standard setup capacity.'));
-		$fields->addFieldToTab('Root.Capacities', new TextField('RoundedTablesCapacity','Rounded Tables Capacity'));
-		$fields->addFieldToTab('Root.Capacities', new TextField('TheaterCapacity','Theater Capacity'));
-		$fields->addFieldToTab('Root.Capacities', new TextField('ClassroomCapacity','Classroom Capacity'));
-		$fields->addFieldToTab('Root.Capacities', new TextField('UshapeCapacity','U-Shape Capacity'));
-		$fields->addFieldToTab('Root.Capacities', new TextField('BoardroomCapacity','Board Room Capacity'));
-
-		// Amenities
-		$fields->addFieldToTab('Root.Amenities', new CheckboxField('HasComputer','Has Computer?'));
-		$fields->addFieldToTab('Root.Amenities', new CheckboxField('HasEthernetConnection','Has Ethernet Connection?'));
-		$fields->addFieldToTab('Root.Amenities', new CheckboxField('HasProjectorScreen','Has Projector Screen?'));
-		$fields->addFieldToTab('Root.Amenities', new CheckboxField('HasDVD','Has DVD Player?'));
-		$fields->addFieldToTab('Root.Amenities', new CheckboxField('HasSpeakers','Has Speakers?'));
-		$fields->addFieldToTab('Root.Amenities', new CheckboxField('HasMarkerboard','Has Markerboard?'));
-		$fields->addFieldToTab('Root.Amenities', new CheckboxField('HasMicrophone','Has Microphone?'));
-		$fields->addFieldToTab('Root.Amenities', new CheckboxField('HasWifi','Has Wifi?'));
+		
 
 		return $fields;
 
