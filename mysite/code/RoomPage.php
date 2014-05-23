@@ -8,7 +8,7 @@ class RoomPage extends Page {
 		'GeneralRate' => 'Varchar',
 	);
 
-	static $has_one = array(
+	private static $has_one = array(
 		// 'ThumbnailImage'  => 'Image',
 		'SlideshowImage1' => 'Image',
 		'SlideshowImage2' => 'Image',
@@ -16,6 +16,9 @@ class RoomPage extends Page {
 		'SlideshowImage4' => 'Image'
    );
 
+	private static $has_many = array (
+		'SlideShowImages' => 'Image'
+	)
 
 	public function getCMSFields(){
 		$fields = parent::getCMSFields();

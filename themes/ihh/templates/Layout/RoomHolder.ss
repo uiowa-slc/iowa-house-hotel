@@ -7,8 +7,6 @@
 	<div class="container clearfix">
 		<div class="white-cover"></div>
 		 <section class="main-content <% if $BackgroundImage %>margin-top<% end_if %>">
-			$Content
-			$Form
 			<ul class="justify MeetingRoomList">
 				<% loop $Children %>
 					<li class="item">
@@ -20,6 +18,8 @@
 				<% end_loop %>
 					<li class="item filler"></li>
 			</ul>
+			$Content
+			$Form
 		 </section>
 		 <section class="sec-content hide-print">
 			<% include SideNav %>
