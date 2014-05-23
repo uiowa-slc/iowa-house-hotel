@@ -10,9 +10,9 @@ class RoomHolder extends Page {
 
 	private static $default_child = "RoomPage";
 
-	// private static $allowed_children = array(
-	// 	'MeetingRoomPage'
-	// );
+	private static $allowed_children = array(
+		'RoomPage'
+	);
 
 
 }
