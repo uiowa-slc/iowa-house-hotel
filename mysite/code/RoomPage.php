@@ -16,10 +16,6 @@ class RoomPage extends Page {
 		'SlideshowImage4' => 'Image'
    );
 
-	private static $has_many = array (
-		'SlideShowImages' => 'Image'
-	)
-
 	public function getCMSFields(){
 		$fields = parent::getCMSFields();
 
