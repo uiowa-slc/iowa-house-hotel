@@ -1,5 +1,5 @@
 <?php
-class MeetingRoomHolder extends Page {
+class RoomHolder extends Page {
 
 	private static $db = array(
 	);
@@ -14,7 +14,7 @@ class MeetingRoomHolder extends Page {
 
 
 }
-class MeetingRoomHolder_Controller extends Page_Controller {
+class RoomHolder_Controller extends Page_Controller {
 
 	/**
 	 * An array of actions that can be accessed via a request. Each array element should be an action name, and the
