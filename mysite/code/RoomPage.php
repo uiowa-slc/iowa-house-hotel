@@ -2,12 +2,10 @@
 class RoomPage extends Page {
 
 	private static $db = array(
-	// Generic
-	'Number' => 'Varchar',
 	// Rates
-	'StudentRate' => 'Varchar',
-	'FacultyRate' => 'Varchar',
-	'GeneralRate' => 'Varchar',
+		'StudentRate' => 'Varchar',
+		'FacultyRate' => 'Varchar',
+		'GeneralRate' => 'Varchar',
 	);
 
 	static $has_one = array(
@@ -18,9 +16,6 @@ class RoomPage extends Page {
 		'SlideshowImage4' => 'Image'
    );
 
-   static $defaults = array (
-		"HasWifi" => true
-   );
 
 	public function getCMSFields(){
 		$fields = parent::getCMSFields();
@@ -33,8 +28,6 @@ class RoomPage extends Page {
 		$fields->addFieldToTab('Root.Images', new UploadField('SlideshowImage3', 'Slideshow Image 3', null, null, null, $this->ClassName));
 		$fields->addFieldToTab('Root.Images', new UploadField('SlideshowImage4', 'Slideshow Image 4', null, null, null, $this->ClassName));
 
-		// Generic
-		$fields->addFieldToTab('Root.Main', new TextField('Number', 'Room Number'));
 		// Rates
 		$fields->addFieldToTab('Root.Rates', new TextField('StudentRate','Student Rate'));
 		$fields->addFieldToTab('Root.Rates', new TextField('FacultyRate','Faculty Rate'));
@@ -45,51 +38,7 @@ class RoomPage extends Page {
 		return $fields;
 
 	}
-	function getStandardCapacity () {
-		$capacities = array(
-			$this->TablesAndChairsCapacity,
-			$this->RoundedTablesCapacity,
-			$this->TheaterCapacity,
-			$this->ClassroomCapacity,
-			$this->UshapeCapacity,
-			$this->BoardroomCapacity
-		);
-
-		foreach($capacities as $capacity) {
-			if (!is_null($capacity) && substr($capacity, -1, 1) == '*') { return substr($capacity, 0, -1); }
-		}
-
-		return false;
-	}
-
-	function getDisplayCapacity () {
-
-		if ($this->getStandardCapacity()) {
-			return $this->getStandardCapacity();
-		} else {
-			$capacities = array(
-				(int) $this->TablesAndChairsCapacity,
-				(int) $this->RoundedTablesCapacity,
-				(int) $this->TheaterCapacity,
-				(int) $this->ClassroomCapacity,
-				(int) $this->UshapeCapacity,
-				(int) $this->BoardroomCapacity
-			);
-		}
-
-		$capacities = array_filter($capacities);
-		asort($capacities);
-		$capacities = array_values($capacities);
-
-		if (count($capacities) == 0) {
-			return 'N/A';
-		} elseif (count($capacities) == 1) {
-			return $capacities[0];
-		} else {
-			return $capacities[0] . '-' . end($capacities);
-		}
-
-	}
+	
 }
 class RoomPage_Controller extends Page_Controller {
 
@@ -113,14 +62,6 @@ class RoomPage_Controller extends Page_Controller {
 
 	public function init() {
 		parent::init();
-
-		function HasAnyAmenities () {
-    	return $this->HasComputer ||
-    	       $this->HasEthernetConnection ||
-    	       $this->HasProjector ||
-    	       $this->HasDVD ||
-    	       $this->HasWifi;
-		}
 
 	}
 
