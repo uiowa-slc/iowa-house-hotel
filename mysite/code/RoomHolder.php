@@ -13,6 +13,7 @@ class RoomHolder extends Page {
 	public function getCMSFields(){
 		$fields = parent::getCMSFields();
 
+
 		$fields->removeByName("Metadata");
 		
 		$fields->addFieldToTab('Root.Main', new HTMLEditorField('Content2', 'Content Below the Rooms List'));
@@ -26,6 +27,11 @@ class RoomHolder extends Page {
 	// 	'MeetingRoomPage'
 	// );
 
+	private static $default_child = "RoomPage";
+
+	private static $allowed_children = array(
+		'RoomPage'
+	);
 
 }
 class RoomHolder_Controller extends Page_Controller {
