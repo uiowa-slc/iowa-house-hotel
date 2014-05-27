@@ -2,12 +2,26 @@
 class RoomHolder extends Page {
 
 	private static $db = array(
+	'Content2' => 'HTMLText'
+	
 	);
 
 	private static $has_one = array(
 
 	);
+	
+	public function getCMSFields(){
+		$fields = parent::getCMSFields();
 
+		$fields->removeByName("Metadata");
+		
+		$fields->addFieldToTab('Root.Main', new HTMLEditorField('Content2', 'Content Below the Rooms List'));
+	
+		
+
+		return $fields;
+
+	}
 	// private static $allowed_children = array(
 	// 	'MeetingRoomPage'
 	// );

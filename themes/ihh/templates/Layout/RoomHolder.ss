@@ -35,6 +35,7 @@
 				<% end_loop %>
 					<li class="item filler"></li>
 			</ul>
+			$Content2
 		 </section>
 		 <section class="sec-content hide-print">
 			<% include SideNav %>
