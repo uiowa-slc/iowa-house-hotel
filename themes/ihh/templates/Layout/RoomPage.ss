@@ -33,7 +33,8 @@
 				</div>
 
 				<div class="well">
-					<button class="btn btn-primary">Reserve This Room</button>
+					<p>Book this room by calling 319-335-3513</p>
+					<!--<button class="btn btn-primary">Reserve This Room</button>-->
 				</div>
 
 				<% if StandardCapacity %>
@@ -42,10 +43,9 @@
 					</p>
 				<% end_if %>
 
-			</div>
 		</section>
 		<section class="sec-content hide-print">
-			<% include SideNav %>
+			<% include RoomSideNav %>
 		</section>
 	</div>
 </div>
