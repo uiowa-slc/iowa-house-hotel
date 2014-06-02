@@ -16,18 +16,6 @@
 						<a href="$Link">
 							<h3 class="title">$Title</h3>
 							<p class="room-capacity">
-								<span class="capacity"><strong>Capacity: </strong>$DisplayCapacity</span>
-								<% if $Number %><span class="room"><strong>Room #</strong>$Number</span><% end_if %>
-							</p>
-
-							<!--
-							<% if $TablesAndChairsCapacity %>$TablesAndChairsCapacity<% end_if %>
-							<% if $RoundedTablesCapacity %>$RoundedTablesCapacity<% end_if %>
-							<% if $TheaterCapacity %>$TheaterCapacity<% end_if %>
-							<% if $ClassroomCapacity %>$ClassroomCapacity<% end_if %>
-							<% if $UshapeCapacity %>$UshapeCapacity<% end_if %>
-							<% if $BoardroomCapacity %>$BoardroomCapacity<% end_if %>
-							-->
 							<img src="$SlideshowImage1.croppedImage(300,200).URL" alt="$Title">
 						 </a>
 					</li>
