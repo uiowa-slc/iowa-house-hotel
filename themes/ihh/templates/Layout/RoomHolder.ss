@@ -18,7 +18,7 @@
 							<p class="room-capacity">
 							<img src="$SlideshowImage1.croppedImage(300,200).URL" alt="$Title">
 						 </a>
-					</li>
+					</li>&nbsp;
 
 				<% end_loop %>
 					<li class="item filler"></li>
