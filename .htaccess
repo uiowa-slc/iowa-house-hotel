@@ -1,35 +1,74 @@
 ### SILVERSTRIPE START ###
 <Files *.ss>
-	Order deny,allow
-	Deny from all
-	Allow from 127.0.0.1
+  Order deny,allow
+  Deny from all
+  Allow from 127.0.0.1
 </Files>
 
 <Files web.config>
-	Order deny,allow
-	Deny from all
+  Order deny,allow
+  Deny from all
 </Files>
 
 ErrorDocument 404 /assets/error-404.html
 ErrorDocument 500 /assets/error-500.html
 
 <IfModule mod_alias.c>
-	RedirectMatch 403 /silverstripe-cache(/|$)
+  RedirectMatch 403 /silverstripe-cache(/|$)
 </IfModule>
 
 <IfModule mod_rewrite.c>
-	SetEnv HTTP_MOD_REWRITE On
-	RewriteEngine On
+  SetEnv HTTP_MOD_REWRITE On
+  RewriteEngine On
+## CONFIG FOR DEV ENVIRONMENTS
 
-	RewriteCond %{REQUEST_URI} ^(.*)$
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule .* framework/main.php?url=%1&%{QUERY_STRING} [L]
-</IfModule>
+# Cached content - iowa-house-hotel subdirectory
+RewriteCond %{REQUEST_METHOD} ^GET$
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} ^/iowa-house-hotel/(.*)$
+RewriteCond %{REQUEST_URI} /iowa-house-hotel/(.*[^/])/?$
+RewriteCond %{DOCUMENT_ROOT}/iowa-house-hotel/cache/%1.html -f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* /iowa-house-hotel/cache/%1.html [L]
+
+# Cached content - homepage
+RewriteCond %{REQUEST_METHOD} ^GET$
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} ^/iowa-house-hotel/?$
+RewriteCond /iowa-house-hotel/cache/index.html -f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* /iowa-house-hotel/cache/index.html [L]
+
+## CONFIG FOR TEST/LIVE ENVIRONMENTS
+
+# Cached content - live webserver
+RewriteCond %{REQUEST_METHOD} ^GET$
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} /(.*[^/])/?$
+RewriteCond %{DOCUMENT_ROOT}/cache/%1.html -f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* /cache/%1.html [L]
+
+# Cached content - homepage
+RewriteCond %{REQUEST_METHOD} ^GET$
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteCond %{DOCUMENT_ROOT}/cache/index.html -f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* /cache/index.html [L]
+
+## DYNAMIC CONFIG
+
+# Dynamic content
+RewriteCond %{REQUEST_URI} !(\.gif)|(\.jpg)|(\.png)|(\.css)|(\.js)|(\.php)$
+RewriteCond %{REQUEST_URI} ^(.*)$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* staticpublisher/main.php?url=%1&%{QUERY_STRING} [L]
 ### SILVERSTRIPE END ###
 
 
 #php_value error_reporting 2147483647
-php_flag display_errors on
+#php_flag display_errors on
 
 
 # ------------------------------------------------------------------------------
