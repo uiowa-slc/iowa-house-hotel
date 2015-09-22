@@ -14,9 +14,10 @@
 
 					<li class="item">
 						<a href="$Link">
-							<h3 class="title">$Title</h3>
-							<p class="room-capacity">
+							
+				
 							<img src="$SlideshowImage1.croppedImage(300,200).URL" alt="$Title">
+							<h3 class="title">$Title</h3>
 						 </a>
 					</li>&nbsp;
 
