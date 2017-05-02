@@ -5,6 +5,7 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-426753-57', 'iowahousehotel.com');
+  ga('require', 'linkid');
   ga('send', 'pageview');
 
 </script>
