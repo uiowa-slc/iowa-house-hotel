@@ -28,7 +28,7 @@
 				<p>
 					$SiteConfig.Title<br />
 					<span itemprop="streetAddress">125 N. Madison Street</span>
-					<br /><span itemprop="addressLocality">Iowa City</span>, <span itemprop="addressRegion">IA</span><span itemprop="postalCode">52242</span><br />
+					<br /><span itemprop="addressLocality">Iowa City</span>, <span itemprop="addressRegion">IA</span>&nbsp;<span itemprop="postalCode">52242</span><br />
 					<% if $SiteConfig.PhoneNumber %>
 						<br />Phone: <span itemprop="telephone">$SiteConfig.PhoneNumber</span>
 					<% end_if %>
