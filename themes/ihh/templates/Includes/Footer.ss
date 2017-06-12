@@ -7,35 +7,34 @@
 			<% else %>
 			<a href="http://studentlife.uiowa.edu" class="hide-print footer-logo"><img src="division-project/images/dosl-uiowa.png" alt="Division Of Student Life"></a>
 			<% end_if %>
-			<% if $SiteConfig.GroupSummary %>
-				$SiteConfig.GroupSummary
-			<% else_if $SiteConfig.DisableDivisionBranding %>
-				<p>In pursuing its missions of teaching, research, and service, the University seeks to advance scholarly and creative endeavor through leading-edge research and artistic production; to use this research and creativity to enhance undergraduate, graduate, and professional education, health care, and other services provided to the people of Iowa, the nation, and the world; and to educate students for success and personal fulfillment in a diverse world.</p>
-			<% else %>
-				<p>The Division of Student Life fosters student success by creating and promoting inclusive educationally purposeful services and activities within and beyond the classroom.</p>
-			<% end_if %>
 
-			<%-- <p>
-				$SiteConfig.Address
+			<div itemscope itemtype="http://schema.org/Hotel">
+				<div itemprop="description">
+					<% if $SiteConfig.GroupSummary %>
+						$SiteConfig.GroupSummary
+					<% else_if $SiteConfig.DisableDivisionBranding %>
+						<p>In pursuing its missions of teaching, research, and service, the University seeks to advance scholarly and creative endeavor through leading-edge research and artistic production; to use this research and creativity to enhance undergraduate, graduate, and professional education, health care, and other services provided to the people of Iowa, the nation, and the world; and to educate students for success and personal fulfillment in a diverse world.</p>
+					<% else %>
+						<p>The Division of Student Life fosters student success by creating and promoting inclusive educationally purposeful services and activities within and beyond the classroom.</p>
+					<% end_if %>
+				</div>
+				<p style="margin-bottom: 0;">
+					<span itemprop="name">$SiteConfig.Title</span>
+				</p>
+
+				<div itemscope itemtype="http://schema.org/PostalAddress">
+					<p style="margin-top: 0;">
+						<span itemprop="streetAddress">125 N. Madison Street</span>
+						<br /><span itemprop="addressLocality">Iowa City</span>, <span itemprop="addressRegion">IA</span>&nbsp;<span itemprop="postalCode">52242</span>
+					</p>
+				</div>
+				<p>
 				<% if $SiteConfig.PhoneNumber %>
-					<br />Phone: $SiteConfig.PhoneNumber
+					<br />Phone: <span itemprop="telephone">$SiteConfig.PhoneNumber</span>
 				<% end_if %>
 				<% if $SiteConfig.EmailAddress %>
-					<br />Email: <a href="mailto:{$SiteConfig.EmailAddress}">$SiteConfig.EmailAddress</a>
+					<br /><a href="mailto:$SiteConfig.EmailAddress"><span itemprop="email">$SiteConfig.EmailAddress</span></a>
 				<% end_if %>
-			</p> --%>
-			<div itemscope itemtype="http://schema.org/PostalAddress">
-				<p>
-					$SiteConfig.Title<br />
-					<span itemprop="streetAddress">125 N. Madison Street</span>
-					<br /><span itemprop="addressLocality">Iowa City</span>, <span itemprop="addressRegion">IA</span>&nbsp;<span itemprop="postalCode">52242</span><br />
-					<% if $SiteConfig.PhoneNumber %>
-						<br />Phone: <span itemprop="telephone">$SiteConfig.PhoneNumber</span>
-					<% end_if %>
-
-					<% if $SiteConfig.EmailAddress %>
-						<br /><a href="mailto:$SiteConfig.EmailAddress"><span itemprop="email">$SiteConfig.EmailAddress</span></a>
-					<% end_if %>
 				</p>
 			</div>
 		</div>
