@@ -22,7 +22,7 @@
 					<span itemprop="name">$SiteConfig.Title</span>
 				</p>
 
-				<div itemscope itemtype="http://schema.org/PostalAddress">
+				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					<p style="margin-top: 0;">
 						<span itemprop="streetAddress">125 N. Madison Street</span>
 						<br /><span itemprop="addressLocality">Iowa City</span>, <span itemprop="addressRegion">IA</span>&nbsp;<span itemprop="postalCode">52242</span>
