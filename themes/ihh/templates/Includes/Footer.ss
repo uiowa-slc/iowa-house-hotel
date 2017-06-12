@@ -30,7 +30,7 @@
 				</div>
 				<p>
 				<% if $SiteConfig.PhoneNumber %>
-					<br />Phone: <span itemprop="telephone">$SiteConfig.PhoneNumber</span>
+					Phone: <span itemprop="telephone">$SiteConfig.PhoneNumber</span>
 				<% end_if %>
 				<% if $SiteConfig.EmailAddress %>
 					<br /><a href="mailto:$SiteConfig.EmailAddress"><span itemprop="email">$SiteConfig.EmailAddress</span></a>
