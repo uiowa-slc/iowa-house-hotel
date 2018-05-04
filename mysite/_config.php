@@ -22,5 +22,5 @@ if(Director::isLive()) {
 	Director::forceSSL();
 }
 Authenticator::set_default_authenticator('SAMLAuthenticator');
-
+Authenticator::unregister('MemberAuthenticator');
 SSViewer::set_theme('division-subtheme');
