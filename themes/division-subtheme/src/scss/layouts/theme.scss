@@ -1,35 +1,29 @@
-.room-grid {
+.footer-logo-area {
+	border-top: 1px solid #ddd;
+	padding: 20px 0;
+	font-size: 15px;
+	p{
+		margin: 0.6667em 0;
+	}
 
-	&__title{
-		margin-top: rem-calc(5);
-		margin-bottom: rem-calc(5);
-	}
-	&__link {
-		display: block;
-	}
-	&__info{
-		font-size: rem-calc(14);
-	}
 }
 
-.room-single{
-	&__info{
-		margin-top: rem-calc(25);
-	}
+.footer-logo-area__logo{
+	max-height: 160px;
+	display: block;
+	margin: auto;
+}
 
-	&__room-no{
-		font-size: rem-calc(32);
-		font-weight: bold;
-	}
-	&__contact{
-		text-align: center;
-		background: #eee;
-		border: 1px solid #ddd;
-		padding: rem-calc(20);
-		margin: rem-calc(40) 0;
+#mc_embed_signup form {
+	padding: 0;
+	width: 280px;
+}
 
-		.button{
-			margin-bottom: rem-calc(20);
-		}
-	}
+#mc_embed_signup input {
+	border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+}
+#mc_embed_signup .clear{
+	clear: none;
+	display: inline;
+	float: none;
 }

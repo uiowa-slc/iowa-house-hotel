@@ -1,4 +1,8 @@
 <?php
+
+use SilverStripe\Assets\Image;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\TextField;
 class RoomPage extends Page {
 
 	private static $db = array(
@@ -10,10 +14,10 @@ class RoomPage extends Page {
 
 	private static $has_one = array(
 		// 'ThumbnailImage'  => 'Image',
-		'SlideshowImage1' => 'Image',
-		'SlideshowImage2' => 'Image',
-		'SlideshowImage3' => 'Image',
-		'SlideshowImage4' => 'Image'
+		'SlideshowImage1' => Image::class,
+		'SlideshowImage2' => Image::class,
+		'SlideshowImage3' => Image::class,
+		'SlideshowImage4' => Image::class
    );
 
 	public function getCMSFields(){
@@ -32,35 +36,9 @@ class RoomPage extends Page {
 		$fields->addFieldToTab('Root.Rates', new TextField('FacultyRate','Faculty Rate'));
 		$fields->addFieldToTab('Root.Rates', new TextField('GeneralRate','General Rate'));
 
-		
+
 
 		return $fields;
-
-	}
-	
-}
-class RoomPage_Controller extends Page_Controller {
-
-	/**
-	 * An array of actions that can be accessed via a request. Each array element should be an action name, and the
-	 * permissions or conditions required to allow the user to access it.
-	 *
-	 * <code>
-	 * array (
-	 *     'action', // anyone can access this action
-	 *     'action' => true, // same as above
-	 *     'action' => 'ADMIN', // you must have ADMIN permissions to access this action
-	 *     'action' => '->checkAction' // you can only access this action if $this->checkAction() returns true
-	 * );
-	 * </code>
-	 *
-	 * @var array
-	 */
-	private static $allowed_actions = array (
-	);
-
-	public function init() {
-		parent::init();
 
 	}
 
