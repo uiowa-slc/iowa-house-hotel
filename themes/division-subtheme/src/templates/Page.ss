@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
+    $GlobalAnalytics
     <% base_tag %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,8 @@
     <% else %>
       <title>$Title - $SiteConfig.Title | The University of Iowa</title>
     <% end_if %>
-<%--     $OpenGraph --%>
+
+    $OpenGraph
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
