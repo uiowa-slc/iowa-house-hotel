@@ -5,10 +5,11 @@ $Header
 	<% if $BackgroundImage %>
 		<% include FeaturedImage %>
 	<% end_if %>
-	$Breadcrumbs
+
 <% if not $BackgroundImage %>
 	<div class="column row">
 		<div class="main-content__header">
+            $Breadcrumbs
 			<h1>$Title</h1>
 		</div>
 	</div>
@@ -38,12 +39,12 @@ $BlockArea(BeforeContent)
 							<div class="slideshow__slide">
 								<img class="slideshow__img" data-flickity-lazyload="$SlideshowImage3.FocusFill(840, 525).URL" width="840" height="525" alt="" role="presentation" />
 							</div>
-						<% end_if %>		
+						<% end_if %>
 						<% if SlideshowImage4 %>
 							<div class="slideshow__slide">
 								<img class="slideshow__img" data-flickity-lazyload="$SlideshowImage4.FocusFill(840, 525).URL" width="840" height="525" alt="" role="presentation" />
 							</div>
-						<% end_if %>														
+						<% end_if %>
 					</div>
 				<% else_if $SlideshowImage1 %>
 					<img src="$SlideshowImage1.CroppedImage(760, 506).URL" alt="$Title">
