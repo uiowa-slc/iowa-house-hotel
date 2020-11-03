@@ -15,7 +15,7 @@ $Header
 	</div>
 <% end_if %>
 
-$BlockArea(BeforeContent)
+$BeforeContent
 
 <div class="row">
 	<article role="main" class="main-content main-content--with-padding <% if $SiteConfig.ShowExitButton %>main-content--with-exit-button-padding<% end_if %> <% if $Children || $Menu(2) || $SidebarBlocks ||  $SidebarView.Widgets %>main-content--with-sidebar<% else %>main-content--full-width<% end_if %>">
@@ -52,10 +52,14 @@ $BlockArea(BeforeContent)
 		<div class="main-content__text">
 			$Content
 		</div>
-		<div class="room-single__contact">
-			<p>Book this room by calling 319-335-3513 or by <a href="https://clients.innroad.com/iowa/property.aspx" target="_blank">making a reservation online</a></p>
+        <hr />
+		<div class="room-single__contact text-center">
+			<p>Book this room by calling <a href="tel:319-335-3513">319-335-3513</a> or</p>
+            <p><a class="button" href="https://iowahouse.client.innroad.com" target="_blank" rel="noopener">Make a reservation online</a></p>
+
+
 		</div>
-		$BlockArea(AfterContentConstrained)
+		$AfterContentConstrained
 		$Form
 		<% if $ShowChildPages %>
 			<% include ChildPages %>
